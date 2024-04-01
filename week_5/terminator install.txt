@@ -1,0 +1,13 @@
+ctrl+alt+t : 터미널 열기
+
+<VS code 설치>
+
+sudo apt update
+
+sudo apt install terminator
+
+터미널 닫기
+
+<VS code 실행>
+
+ctrl+alt+t
