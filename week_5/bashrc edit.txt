@@ -1,3 +1,13 @@
+<Running ROS across multiple machines>
+ctrl+alt+t : 터미널 열기
+gedit ~/.bashrc
+(아래 명령어 추가)
 export ROS_IP=노트북IP주소
 export ROS_MASTER_URI=http://리모IP주소:11311
 
+<single machine>
+ctrl+alt+t : 터미널 열기
+gedit ~/.bashrc
+(아래 명령어 추가)
+$ export ROS_HOSTNAME=localhost
+$ export ROS_MASTER_URI=http://localhost:11311
