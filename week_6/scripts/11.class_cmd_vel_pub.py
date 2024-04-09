@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# 위의 코드는 ROS(로봇 운영 체제)에서 동작하는 Python 클래스 예제입니다.
-# 이 예제를 통해 학생들은 클래스를 사용하여 로봇을 제어하고 움직이는 방법을 배울 수 있습니다.
-
 # rospy 라이브러리와 필요한 메시지 유형(geometry_msgs.msg)을 가져옵니다.
 import rospy
 from geometry_msgs.msg import Twist
