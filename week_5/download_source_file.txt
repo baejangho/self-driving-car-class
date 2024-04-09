@@ -1,9 +1,4 @@
 ctrl+alt+t : 터미널 열기
 
-mkdir self-driving-car-class
-(폴더 생성 확인)
-
-cd self-driving-car-class
-
 git clone https://github.com/baejangho/self-driving-car-class.git
 (self-dring-car-class 폴더 내 파일 생성 확인)

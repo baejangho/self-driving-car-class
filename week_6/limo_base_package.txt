@@ -1,0 +1,19 @@
+<설치>
+ctrl+alt+t : 터미널 열기
+
+cd ~/catkin_ws/src
+
+git clone https://github.com/agilexrobotics/limo_ros.git
+
+cd ~/catkin_ws
+
+catkin_make
+
+source ./devel/setup.sh
+
+
+<구동확인>
+터미널 1 : roslaunch limo_base limo_base.launch
+터미널 2 : rostopic list 
+터미널 3 : rostopic pub /cmd_vel geometry_msgs/Twist (~~ * tap key를 이용하여 자동완성) -r 10
+터미널 4 : rostopic info /cmd_vel

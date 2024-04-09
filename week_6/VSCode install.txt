@@ -14,3 +14,7 @@ sudo apt install code
 
 <VS code 실행>
 code
+
+<vscod-pdf 설치>
+1. 확장
+2. vscode-pdf 설치

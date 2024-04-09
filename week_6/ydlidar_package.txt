@@ -1,0 +1,26 @@
+<YDidar SDK 설치>
+ctrl+alt+t : 터미널 열기
+
+cd
+git clone https://github.com/YDLIDAR/YDLidar-SDK.git
+cd ~/YDLidar-SDK
+mkdir build
+cd ~/YDLidar-SDK/build
+cmake ..
+make
+sudo make install
+(비밀번호 입력창이 나오면 로그인비번 입력 후 enter - 암호 입력이 화면에 보이지 않음)
+
+<ydlidar_ros_driver 확인>
+cd ~/catkin_ws/src
+git clone https://github.com/YDLIDAR/ydlidar_ros_driver.git 
+cd ~/ catkin_ws/
+catkin_make
+(* catkin_make 후 build 에러 시 아래 설치 후 다시 catkin_make)
+sudo apt-get install -y python-tf2-sensor-msgs
+source ./devel/setup.sh
+
+<ydlidar 실행>
+
+터미널 1 : roslaunch ydlidar_ros_driver X2.launch
+터미널 2 : rviz
