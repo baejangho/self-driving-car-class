@@ -40,6 +40,7 @@ class ImageProcessor:  # 1단계: 클래스 이름 정의
         self.create_trackbar_flag = False  # 트랙바를 생성했는지 여부를 나타내는 플래그를 초기화합니다.
         self.original_window = "original_image"
         self.cropped_window = "croped_image"
+        self.ref_pos = 40 # 차량이 중심에 있을 때 좌 또는 우 차선 위치 값
 
     def cam_CB(self, msg):  # 3단계: 클래스 내의 콜백 함수 설정
         # 이미지 메세지를 받아오기 위한 콜백 함수입니다.
@@ -55,8 +56,8 @@ class ImageProcessor:  # 1단계: 클래스 이름 정의
             self.x = int(M['m10']/M['m00'])
             self.y = int(M['m01']/M['m00'])
         except:
-            self.x = -1
-            self.y = -1
+            self.x = 0
+            self.y = 0
         # print("x, y = {}, {}".format(x, y))
         return self.x
 
@@ -151,6 +152,10 @@ class ImageProcessor:  # 1단계: 클래스 이름 정의
                 pos_lane = self.calc_left_distance(hsv_img)
             else:
                 pos_lane = self.calc_left_distance(hsv_img) + cv_img.shape[1] // 2
+            
+            cv2.circle(cv_img, [pos_lane, cv_img.shape[0] * 7 // 8], 3, [0, 255, 0], -1)
+            cv2.putText(cv_img, self.ref_pos, (cv_img.shape[1] // 8, cv_img.shape[0] // 8), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
+            cv2.putText(cv_img, pos_lane, (cv_img.shape[1] // 8, cv_img.shape[0] // 4), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
                 
             cv2.imshow("orig",cv_img)
             cv2.imshow("hsv",hsv_img)
