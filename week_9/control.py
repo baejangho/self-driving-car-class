@@ -15,7 +15,7 @@ class move_limo:
         self.center_x = 0
         self.KP = 0.0001
         
-        rospy.Subscriber("/lane/left_x", Int32, self.lane_cb)
+        rospy.Subscriber("/left_x", Int32, self.lane_cb)
         self.drive_pub = rospy.Publisher("cmd_vel", Twist, queue_size=1)
         self.rate = rospy.Rate(20)
 

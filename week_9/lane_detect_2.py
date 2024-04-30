@@ -24,7 +24,8 @@ class ImageProcessor:  # 1단계: 클래스 이름 정의
         # ROS 서브스크라이버(Subscriber)를 설정합니다.
         # "/camera/rgb/image/raw/compressed" 토픽에서 CompressedImage 메시지를 구독하고, 콜백 함수(callback)를 호출합니다.
         rospy.Subscriber("/camera/rgb/image_raw/compressed", CompressedImage, self.cam_CB)  # ROS 2단계(필수): 서브스크라이버 설정
-
+        
+        
         # CvBridge 모듈을 사용하여 이미지 메시지(CompressedImage)를 OpenCV 이미지로 변환할 준비를 합니다.
         self.bridge = CvBridge()
         self.img_msg = CompressedImage()  # 이미지 메시지를 저장할 변수를 초기화합니다.
@@ -152,6 +153,7 @@ class ImageProcessor:  # 1단계: 클래스 이름 정의
                 pos_lane = self.calc_left_distance(hsv_img)
             else:
                 pos_lane = self.calc_left_distance(hsv_img) + cv_img.shape[1] // 2
+            
             
             cv2.circle(cv_img, [pos_lane, cv_img.shape[0] * 7 // 8], 3, [0, 255, 0], -1)
             cv2.putText(cv_img, self.ref_pos, (cv_img.shape[1] // 8, cv_img.shape[0] // 8), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
