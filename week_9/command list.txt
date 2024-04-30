@@ -1,0 +1,32 @@
+1. 7주차 수업자료 복사
+
+ctrl+alt+t : 터미널 열기
+
+self-driving-car-class 폴더 삭제
+
+$ git clone https://github.com/baejangho/self-driving-car-class.git
+(self-dring-car-class 폴더 내 파일 생성 확인)
+
+2. limo를 통한 rosbag record(리모)
+
+터미널1
+$ roslaunch astra_camera dabai_u3.launch
+ 
+터미널2
+$ mkdir rosbag_files
+$ cd rosbag_files
+$ rosbag record –O test.bag /camera/rgb/image_raw/compressed
+
+3. rosbag 파일 재생(노트북)
+
+-. rosbag 파일 복사
+
+터미널1
+$ rosrun basic_ex lane_detect.py
+
+4. 라이다 실습
+<리모>
+$ roslaunch ydlidar_ros x2L.launch
+
+<노트북>
+$ rosrun basic_ex lidar_sub.py
