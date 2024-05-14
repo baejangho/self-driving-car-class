@@ -4,7 +4,7 @@
     <include file="$(find limo_base)/launch/limo_base.launch" />
     <include file="$(find ydlidar_ros_driver)/launch/X2L.launch" />
 
-    <node pkg="basic_ex" type="lane_detect_2" name="lane_detect" output="screen"/>
-    <node pkg="basic_ex" type="lidar_sub" name="lidar_obs" output="screen"/>
-    <node pkg="basic_ex" type="control_obstacle" name="control_obs" output="screen"/>
+    <node pkg="basic_ex" type="lane_detect_2.py" name="lane_detect" output="screen"/>
+    <node pkg="basic_ex" type="lidar_sub.py" name="lidar_obs" output="screen"/>
+    <node pkg="basic_ex" type="control_obstacle.py" name="control_obs" output="screen"/>
 </launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Start the speed node(주석역할) -->
+    <include file="$(find limo_base)/launch/limo_base.launch"/>
+    <include file="$(find astra_camera)/launch/dabai_u3.launch"/>
+
+    <node pkg="basic_ex" type="lane_detect_11.py" name="lane_detect_node" output="screen"/>
+    <node pkg="basic_ex" type="control_lane_11.py" name="control_node" output="screen"/>
+</launch>
