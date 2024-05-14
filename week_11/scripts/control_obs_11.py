@@ -16,6 +16,7 @@ class move_limo:
         rospy.Subscriber('obstacle_dist', Int32, self.obstacle_dist_fn)
         self.obs_dist = 0
         self.rate = rospy.Rate(10)  # ROS 2-1단계(옵션): 발행 주기 설정
+        
     def obstacle_dist_fn(self,data):
         self.obs_dist = data.data
         print("obstacle_dist:",self.obs_dist)
