@@ -63,12 +63,9 @@ class Obs_detect:  # 클래스 이름 정의
                 print(self.degrees)
             if self.degrees_flag == True:
                 for i, n in enumerate(curren_laser.ranges):
-                    # if 5 < self.degrees[i] < 30:
-                    #     print('test',n)
-
                     ## x, y 좌표로 변환
                     x = n * math.cos(self.degrees[i] * math.pi / 180)
-                    y = n * math.sin(self.4degrees[i] * math.pi / 180)              
+                    y = n * math.sin(self.degrees[i] * math.pi / 180)              
                     # right obstacle detection
                     if 0.15 < y < 0.45 and 0 < x < 0.5:
                         pub_obs_L_list.append(n)
